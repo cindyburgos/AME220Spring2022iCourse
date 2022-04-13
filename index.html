@@ -2,14 +2,10 @@
 <html>
 <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    img {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 5px;
-      width: 350px;
-      }
+  
 
     img:hover {
       box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
@@ -28,13 +24,13 @@
         }
         
         td, th {
-          border: 1px solid #dddddd;
+          border: 1px solid indianred;
           text-align: left;
           padding: 8px;
         }
         
         tr:nth-child(even) {
-          background-color: #dddddd;
+          background-color: indianred;
         }
         </style>
         <style>
@@ -47,51 +43,58 @@
         </style>
   <title> HTML Resume </title>
 </head>
-</body>
+<body>
     
-  <h1> Welcome to my HTML Resume! </h1>
+  <h1> Welcome to my HTML Resume! 
   <p> My name is Cindy Burgos and this is my HTML resume.</p> 
+  </h1>
+  
   <a target="_blank" href="atarmauritania.jpeg">
     <img src="atarmauritania.jpeg" alt="Atar, Mauritania" style="width: 350px">
   </a>
 
-  <h3>Contact Info</h3>
-  <div id="ContactInfo">
-    <li><a href="mailto:cburgos5@asu.edu">Name:</a> Cindy Burgos</li>
-    <li><a href="mailto:cburgos5@asu.edu">Email:</a> cburgos5@asu.edu</li>
-    <li>Phone Number: 000-000-0000</li> <!--I did not feel comfortable listing my actual phone number. -->
+  <button class="accordion">Contact Info</button>
+  <div class="panel">
+  <p><li><a href="mailto:cburgos5@asu.edu">Name:</a> Cindy Burgos</li></p>
+  <p><li><a href="mailto:cburgos5@asu.edu">Email:</a> cburgos5@asu.edu</li></p>
+  <p><li>Phone Number: 000-000-0000</li></p> <!--I did not feel comfortable listing my actual phone number. -->
   </div>
-  <h3>Objective</h3>
-  <p>My main objective for this course is to obtain a concrete understanding of HTML & CSS. I have taken a course in HTML/CSS 
-     before, but I wasn't able to fully graps the content. This class is a great refresher. My long-term goal/objective is to 
-     polish my skill in programming so that I may recieve a certification in JS & HTML/CSS. I would like to pick up Python eventually.
+
+  <button class="accordion">Objective</button>
+  <div class="panel"><p>My main objective for this course is to obtain a concrete understanding of HTML & CSS. I have taken a course in HTML/CSS 
+    before, but I wasn't able to fully grasp the content. This class is a great refresher. My long-term goal/objective is to 
+    polish my skill in programming so that I may recieve a certification in JS & HTML/CSS. I would like to pick up Python eventually.
   </p>
+  </div>
 
-  <h3>Education</h3>
-<table>
-  <tr>
-    <th>Institution</th>
-    <th>Area of Focus</th>
-    <th>Degree Type</th>
-  </tr>
-  <tr>
-    <td>Arizona State University</td>
-    <td>Industrial Design</td>
-    <td>Undergrad</td>
-  </tr>
-  <tr>
-    <td>Arizona State University</td>
-    <td>Digital Culture</td>
-    <td>Minor</td>
-  </tr>
-  <tr>
-    <td>Arizona State University</td>
-    <td>Biomimicry</td>
-    <td>Certification</td>
-  </tr>
-</table>
+  <button class="accordion">Education</button>
+  <div class="panel">
+    <table>
+    <tr>
+      <th>Institution</th>
+      <th>Area of Focus</th>
+      <th>Degree Type</th>
+    </tr>
+    <tr>
+      <td>Arizona State University</td>
+      <td>Industrial Design</td>
+      <td>Undergrad</td>
+    </tr>
+    <tr>
+      <td>Arizona State University</td>
+      <td>Digital Culture</td>
+      <td>Minor</td>
+    </tr>
+    <tr>
+      <td>Arizona State University</td>
+      <td>Biomimicry</td>
+      <td>Certification</td>
+    </tr>
+  </table>
+  </div>
 
-<h3>Experience</h3>
+<button class="accordion">Experience</button>
+<div class="panel">
 <ol>
   <li>JavaScript - JavaScript is the first programming language that I learned. I've used it to formulate mathmatical analysis, create databases, visual data analytics, and interactive artwork.</li>
   
@@ -102,11 +105,33 @@
   <li>Max/MSP/Jitter - This is the most recent programming interface I've worked with. I primarily programmed robots with this (to play the piano, paint a portrait, etc).</li>
 
 </ol>  
-<h3>References</h3>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Handbook</a></li>
+</div>
 
-<li><a href="https://www.w3schools.com/html/html_tables.asp">TABLE</a></li>
+<button class="accordion">References</button>
+<div class="panel">
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Handbook</a></li>
 
-<li><a href="https://www.w3schools.com/howto/tryit.asp?font=Roboto%20Condensed">ROBOTO FONT</a></li>
+  <li><a href="https://www.w3schools.com/html/html_tables.asp">TABLE</a></li>
+
+  <li><a href="https://www.w3schools.com/howto/tryit.asp?font=Roboto%20Condensed">ROBOTO FONT</a></li>
+</div>
+
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
 </body>
 </html>

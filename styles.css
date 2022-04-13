@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+    font-size: 1.25em;
+    color: indianred;
+    margin-bottom: .3em;
+}
+
+body {
+    background-color: linen;
+    color: olivedrab;
+}
+
+h3 {
+    text-align:left;
+    font-size: 1.25em;
+    text-decoration: underline;
+    color: indianred;
+}
+
+table {
+    font-family: Roboto Condensed;
+    border-collapse: collapse;
+    width: 50%;
+    color: black;
+  }
+
+  .accordion {
+    background-color: linen; 
+    color: indianred;
+    font-family: 'Roboto Condensed';
+    font-size: 1.25em;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    }
+
+  .active, .accordion:hover {
+    background-color: linen; 
+    }
+
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: linen;
+    overflow: hidden;
+    }
+  img {
+    border: 1px color linen;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+    }
